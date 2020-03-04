@@ -15,10 +15,3 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-- task: executeTestSuite@0
-  inputs:
-    tcclicommand: 'tc-cli run -u user@permobil.com -t B4B4D0D4BED344B0BFA06D757FE2E860 -p "eCon Test" -v "Base" -s "eCON Test Suite TWO" -l "Chrome 1920x1080" -e "eCON TEST Env" -c vsts -r TEST-1.xml'
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: 'TEST-*.xm'
